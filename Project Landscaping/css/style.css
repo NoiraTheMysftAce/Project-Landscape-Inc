@@ -1,0 +1,2088 @@
+/* =========================
+   LANDSCAPE INC. - THEME
+========================= */
+
+:root {
+    --bg-primary: #111318;
+    --bg-secondary: #1C2028;
+    --bg-hover: #252B35;
+
+    --text-primary: #E5E7EB;
+    --text-secondary: #9CA3AF;
+
+    --accent: #8BA5B8;
+    --border: #353B45;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 18px 32px;
+
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background-color: var(--accent);
+    color: var(--bg-primary);
+
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.brand-text h1 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand-text span {
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-link {
+    padding: 10px 16px;
+
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    border-radius: 8px;
+    transition: 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.nav-link.active {
+    background-color: var(--bg-hover);
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.admin-label {
+    padding: 9px 14px;
+
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-size: 13px;
+}
+
+/* =========================
+   SMALL SCREEN SUPPORT
+========================= */
+
+@media (max-width: 800px) {
+    .site-header {
+        flex-wrap: wrap;
+        padding: 16px;
+    }
+
+    .main-nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 36px 32px;
+}
+
+/* Dashboard Heading */
+
+.dashboard-header {
+    margin-bottom: 32px;
+}
+
+.breadcrumb {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.dashboard-heading h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.welcome-message {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.dashboard-description {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* Dashboard Statistics Container */
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Responsive Dashboard */
+
+@media (max-width: 1000px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 24px 16px;
+    }
+
+    .dashboard-heading h2 {
+        font-size: 26px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   DASHBOARD STAT CARDS
+========================= */
+
+.stat-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+
+    padding: 24px;
+    min-height: 160px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.stat-number {
+    color: var(--text-primary);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.stat-description {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* =========================
+   UPCOMING JOBS
+========================= */
+
+.upcoming-jobs {
+    margin-top: 32px;
+    padding: 24px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.section-header h3 {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.section-header p {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.view-all,
+.job-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-all:hover,
+.job-link:hover {
+    text-decoration: underline;
+}
+
+/* Job Rows */
+
+.job-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.job-item:last-child {
+    border-bottom: none;
+}
+
+.job-info {
+    flex: 1;
+}
+
+.job-info h4 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.job-info p {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* Job Status */
+
+.job-status {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.in-progress {
+    background-color: #263E47;
+    color: #A5C9D5;
+}
+
+.scheduled {
+    background-color: #303843;
+    color: #C0CCD8;
+}
+
+.awaiting-review {
+    background-color: #413B30;
+    color: #E0C79A;
+}
+
+/* Responsive Jobs */
+
+@media (max-width: 650px) {
+    .section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .job-item {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================
+   SERVICE REQUESTS
+========================= */
+
+.service-requests {
+    margin-top: 24px;
+    padding: 24px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* Pending Request Badge */
+
+.request-count {
+    padding: 6px 12px;
+
+    background-color: var(--bg-hover);
+    color: var(--accent);
+
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Request Information */
+
+.request-item {
+    padding: 16px;
+
+    background-color: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.request-item h4 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.request-location {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.request-submitted {
+    color: var(--text-secondary);
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+
+/* Review Button */
+
+.review-button {
+    padding: 10px 16px;
+
+    background-color: var(--accent);
+    color: var(--bg-primary);
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+.review-button:hover {
+    background-color: #A5BCCA;
+}
+
+/* =========================
+   RECENT ACTIVITY
+========================= */
+
+.recent-activity {
+    margin-top: 24px;
+    padding: 24px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+/* Activity List */
+
+.activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+/* Activity Indicator */
+
+.activity-dot {
+    width: 9px;
+    height: 9px;
+    min-width: 9px;
+
+    margin-top: 6px;
+    border-radius: 50%;
+
+    background-color: var(--accent);
+}
+
+/* Activity Information */
+
+.activity-info h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.activity-info p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.activity-info span {
+    color: var(--accent);
+    font-size: 12px;
+}
+
+/* =========================
+   DASHBOARD PANEL LAYOUT
+========================= */
+
+.dashboard-panels {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 24px;
+
+    margin-top: 32px;
+}
+
+.dashboard-left,
+.dashboard-right {
+    min-width: 0;
+}
+
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Remove old spacing now that
+   the grid controls the layout */
+
+.dashboard-panels .upcoming-jobs,
+.dashboard-panels .service-requests,
+.dashboard-panels .recent-activity {
+    margin-top: 0;
+}
+
+/* Make the left panel fill its column */
+
+.dashboard-left .upcoming-jobs {
+    height: 100%;
+}
+
+/* Tablet and Mobile Layout */
+
+@media (max-width: 950px) {
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   REVIEWED REQUEST STATE
+========================= */
+
+.review-button.reviewed {
+    background-color: var(--bg-hover);
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border);
+    cursor: not-allowed;
+}
+
+.review-button.reviewed:hover {
+    background-color: var(--bg-hover);
+}
+
+/* =========================
+   DASHBOARD TIME FILTER
+========================= */
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.dashboard-filters {
+    display: flex;
+    gap: 4px;
+    padding: 4px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.filter-button {
+    padding: 9px 16px;
+
+    background-color: transparent;
+    color: var(--text-secondary);
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.filter-button:hover {
+    color: var(--text-primary);
+}
+
+.filter-button.active {
+    background-color: var(--bg-hover);
+    color: var(--accent);
+}
+
+/* Mobile Layout */
+
+@media (max-width: 650px) {
+    .dashboard-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Fix Dashboard Header Alignment */
+
+.dashboard-heading {
+    order: 1;
+}
+
+.dashboard-filters {
+    order: 2;
+}
+
+/* =========================
+   JOB DETAILS MODAL
+========================= */
+
+/* Dark background overlay */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+/* Keep modal hidden until opened */
+
+.modal-overlay[hidden] {
+    display: none;
+}
+
+/* Modal Container */
+
+.job-modal {
+    width: 100%;
+    max-width: 500px;
+
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Modal Header */
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 {
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+/* Close Button */
+
+.modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 34px;
+    height: 34px;
+
+    background-color: var(--bg-hover);
+    color: var(--text-secondary);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font-size: 24px;
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.modal-close:hover {
+    background-color: var(--border);
+    color: var(--text-primary);
+}
+
+/* Modal Content */
+
+.modal-body {
+    padding: 24px;
+}
+
+.modal-body h4 {
+    font-size: 18px;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+}
+
+.modal-body p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+/* Mobile Support */
+
+@media (max-width: 600px) {
+    .job-modal {
+        max-width: 100%;
+    }
+
+    .modal-header,
+    .modal-body {
+        padding: 18px;
+    }
+}
+
+/* JOB PHOTOS */
+
+.job-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.photo-box {
+    background-color: var(--bg-primary);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    padding: 25px 15px;
+    text-align: center;
+}
+
+.photo-box h5 {
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.photo-box p {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* PHOTO UPLOAD */
+
+.photo-preview {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.photo-preview[hidden] {
+    display: none;
+}
+
+.photo-upload-button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background-color: var(--bg-hover);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.photo-upload-button:hover {
+    border-color: var(--accent);
+}
+
+/* =========================
+   NEEDS ATTENTION
+========================= */
+
+.needs-attention {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+    min-width: 0;
+}
+
+.attention-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.attention-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.attention-label {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.attention-item h4 {
+    color: var(--text-primary);
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.attention-item p {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE DASHBOARD WIDTH
+   ========================= */
+
+.dashboard {
+    width: 100%;
+    max-width: 2400px;
+    margin-inline: auto;
+    padding-inline: clamp(16px, 2.5vw, 48px);
+}
+
+/* Prevent content from overflowing grid columns */
+.dashboard-panels,
+.dashboard-left,
+.dashboard-right,
+.stat-card {
+    min-width: 0;
+}
+
+/* Large desktop and ultrawide */
+@media (min-width: 1800px) {
+    .dashboard-stats {
+        gap: 24px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-panels {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+    .dashboard {
+        padding: 20px 16px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .stat-card {
+        min-height: 120px;
+    }
+
+    .modal-overlay {
+        padding: 12px;
+    }
+
+    .job-modal {
+        max-height: calc(100dvh - 24px);
+        overflow-y: auto;
+    }
+}
+
+/* =========================
+   JOBS MANAGEMENT PAGE
+========================= */
+
+.jobs-management {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
+    min-width: 0;
+}
+
+.jobs-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.jobs-toolbar h3 {
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.jobs-toolbar p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+}
+
+.new-job-button {
+    padding: 11px 18px;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.new-job-button:hover {
+    background-color: #A5BCCA;
+}
+
+.jobs-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.jobs-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 650px;
+}
+
+.jobs-table th {
+    padding: 14px 16px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+}
+
+.jobs-table td {
+    padding: 20px 16px;
+    color: var(--text-primary);
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+}
+
+.jobs-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.jobs-table tbody tr:hover {
+    background-color: var(--bg-hover);
+}
+
+.manage-job-button {
+    padding: 8px 12px;
+    background-color: var(--bg-hover);
+    color: var(--accent);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.manage-job-button:hover {
+    border-color: var(--accent);
+}
+
+@media (max-width: 650px) {
+    .jobs-management {
+        padding: 16px;
+    }
+
+    .jobs-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================
+   EDITABLE JOB INSTRUCTIONS
+========================= */
+
+#jobInstructions {
+    width: 100%;
+    min-height: 120px;
+    margin-top: 10px;
+    padding: 14px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+#jobInstructions:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.save-instructions-button {
+    margin-top: 14px;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-instructions-button:hover {
+    background: #A5BCCA;
+}
+
+.instructions-save-message {
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* =========================
+   JOB ASSIGNMENTS
+========================= */
+
+#jobAssignee {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+#jobAssignee:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.save-assignment-button {
+    margin-top: 14px;
+    padding: 10px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-assignment-button:hover {
+    background: #A5BCCA;
+}
+
+.assignment-save-message {
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* =========================
+   JOB PHOTO UPLOADS
+========================= */
+
+.job-photo-group {
+    margin-top: 18px;
+}
+
+.job-photo-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.job-photo-group input[type="file"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.job-photo-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 140px;
+    margin-top: 12px;
+    padding: 12px;
+    background: var(--bg-primary);
+    border: 1px dashed var(--border);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.job-photo-preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 240px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.photo-help-text {
+    margin-top: 16px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+@media (max-width: 650px) {
+    .job-photo-preview {
+        min-height: 110px;
+    }
+}
+
+/* =========================
+   JOB MODAL SCROLL FIX
+========================= */
+
+#manageJobModal .job-modal {
+    display: flex;
+    flex-direction: column;
+
+    max-height: calc(100dvh - 40px);
+    overflow: hidden;
+}
+
+#manageJobModal .modal-header {
+    flex-shrink: 0;
+}
+
+#manageJobModal .modal-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+@media (max-width: 650px) {
+    #manageJobModal {
+        padding: 12px;
+    }
+
+    #manageJobModal .job-modal {
+        max-height: calc(100dvh - 24px);
+    }
+}
+
+/* =========================
+   JOB ISSUE REPORTING
+========================= */
+
+#jobIssue,
+#jobIssueStatus {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 14px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+#jobIssue {
+    resize: vertical;
+    min-height: 100px;
+}
+
+#jobIssue:focus,
+#jobIssueStatus:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.save-issue-button {
+    padding: 10px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-issue-button:hover {
+    background: #A5BCCA;
+}
+
+.issue-save-message {
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* =========================
+   JOB COMPLETION APPROVAL
+========================= */
+
+.approval-description {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 12px 0;
+}
+
+.approve-job-button {
+    padding: 11px 18px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.approve-job-button:hover:not(:disabled) {
+    background: #A5BCCA;
+}
+
+.approve-job-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.approval-message {
+    margin-top: 12px;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* =========================
+   JOB STATUS MANAGEMENT
+========================= */
+
+#jobStatusSelect {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 14px;
+    padding: 14px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+#jobStatusSelect:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.save-status-button {
+    padding: 10px 16px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-status-button:hover:not(:disabled) {
+    background: #A5BCCA;
+}
+
+.save-status-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.status-save-message {
+    margin-top: 10px;
+    color: var(--accent);
+    font-size: 13px;
+}
+
+/* =========================
+   NEW JOB FORM
+========================= */
+
+#newJobModal .job-modal {
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 40px);
+    overflow: hidden;
+}
+
+#newJobModal .modal-header {
+    flex-shrink: 0;
+}
+
+#newJobModal .modal-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+}
+
+.job-form-group {
+    margin-bottom: 20px;
+}
+
+.job-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.job-form-group input,
+.job-form-group select,
+.job-form-group textarea {
+    width: 100%;
+    padding: 13px;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+.job-form-group textarea {
+    resize: vertical;
+}
+
+.job-form-group input:focus,
+.job-form-group select:focus,
+.job-form-group textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.new-job-submit {
+    width: 100%;
+    padding: 13px;
+    background: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.new-job-submit:hover {
+    background: #A5BCCA;
+}
+
+@media (max-width: 650px) {
+    #newJobModal {
+        padding: 12px;
+    }
+
+    #newJobModal .job-modal {
+        max-height: calc(100dvh - 24px);
+    }
+}
+
+/* =========================
+   EDIT JOB BUTTON
+========================= */
+
+.edit-job-button {
+    background-color: transparent;
+    color: #8BA5B8;
+    border: 1px solid #353B45;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.2s ease,
+                border-color 0.2s ease,
+                color 0.2s ease;
+}
+
+.edit-job-button:hover {
+    background-color: #252B35;
+    border-color: #8BA5B8;
+    color: #E5E7EB;
+}
+
+.edit-job-button:focus-visible {
+    outline: 2px solid #8BA5B8;
+    outline-offset: 3px;
+}
+
+/* Keep action buttons tidy on smaller screens */
+
+@media (max-width: 650px) {
+    .edit-job-button {
+        margin-left: 6px;
+        padding: 7px 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* =========================
+   EDIT JOB MODAL
+========================= */
+
+#editJobModal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+/* Keep the modal hidden until Edit is clicked */
+#editJobModal[hidden] {
+    display: none;
+}
+
+#editJobModal .modal-content {
+    width: 100%;
+    max-width: 520px;
+    max-height: calc(100dvh - 40px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #1C2028;
+    border: 1px solid #353B45;
+    border-radius: 12px;
+    color: #E5E7EB;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+#editJobModal .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #353B45;
+    flex-shrink: 0;
+}
+
+#editJobModal .modal-header h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #E5E7EB;
+}
+
+#editJobModal #closeEditJob {
+    background: transparent;
+    border: none;
+    color: #9CA3AF;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+#editJobModal #closeEditJob:hover {
+    color: #E5E7EB;
+}
+
+#editJobModal .modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    min-height: 0;
+}
+
+#editJobModal .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+#editJobModal label {
+    color: #E5E7EB;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#editJobModal input,
+#editJobModal select {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    background: #111318;
+    color: #E5E7EB;
+    border: 1px solid #353B45;
+    border-radius: 6px;
+    font: inherit;
+    color-scheme: dark;
+}
+
+#editJobModal input:focus,
+#editJobModal select:focus {
+    outline: none;
+    border-color: #8BA5B8;
+    box-shadow: 0 0 0 2px rgba(139, 165, 184, 0.15);
+}
+
+#editJobModal .primary-button {
+    width: 100%;
+    padding: 12px 16px;
+    background: #8BA5B8;
+    color: #111318;
+    border: none;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#editJobModal .primary-button:hover {
+    background: #A6BDCC;
+}
+
+@media (max-width: 650px) {
+    #editJobModal {
+        padding: 12px;
+    }
+
+    #editJobModal .modal-content {
+        max-height: calc(100dvh - 24px);
+    }
+
+    #editJobModal .modal-header,
+    #editJobModal .modal-body {
+        padding: 18px;
+    }
+}
+
+/* =========================
+   REFINED EDIT JOB LAYOUT
+========================= */
+
+#editJobModal .modal-content {
+    max-width: 580px;
+}
+
+#editJobModal .edit-job-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+#editJobModal .edit-job-fields .form-group {
+    min-width: 0;
+}
+
+#editJobModal .edit-job-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid #353B45;
+}
+
+#editJobModal .edit-job-actions button {
+    width: auto;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#cancelEditJob {
+    background: transparent;
+    color: #E5E7EB;
+    border: 1px solid #353B45;
+}
+
+#cancelEditJob:hover {
+    background: #252B35;
+}
+
+@media (max-width: 650px) {
+    #editJobModal .edit-job-fields {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    #editJobModal .edit-job-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================
+   DELETE JOB BUTTON
+========================= */
+
+.delete-job-button {
+    background: transparent;
+    color: #DCA0A0;
+    border: 1px solid #B87979;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.delete-job-button:hover {
+    background: #B87979;
+    color: #111318;
+}
+
+.delete-job-button:focus-visible {
+    outline: 2px solid #DCA0A0;
+    outline-offset: 3px;
+}
+
+/* =========================
+   JOBS SEARCH TOOLBAR
+========================= */
+
+.jobs-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.job-search {
+    width: 100%;
+    max-width: 360px;
+    padding: 12px 16px;
+
+    background-color: #1C2028;
+    color: #E5E7EB;
+
+    border: 1px solid #353B45;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.job-search::placeholder {
+    color: #9CA3AF;
+}
+
+.job-search:focus {
+    border-color: #8BA5B8;
+}
+
+@media (max-width: 600px) {
+    .job-search {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   JOB STATUS FILTER
+========================= */
+
+.job-status-filter {
+    width: 100%;
+    max-width: 200px;
+    padding: 12px 16px;
+
+    background-color: #1C2028;
+    color: #E5E7EB;
+
+    border: 1px solid #353B45;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    cursor: pointer;
+    outline: none;
+
+    transition: border-color 0.2s ease;
+}
+
+.job-status-filter:focus {
+    border-color: #8BA5B8;
+}
+
+.job-status-filter option {
+    background-color: #1C2028;
+    color: #E5E7EB;
+}
+
+@media (max-width: 600px) {
+    .jobs-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .job-search,
+    .job-status-filter {
+        max-width: 100%;
+    }
+}
+
+/* =========================
+   SCHEDULE CALENDAR
+========================= */
+
+.schedule-calendar {
+    background-color: #1C2028;
+    border: 1px solid #353B45;
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* CALENDAR HEADER */
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.calendar-header h3 {
+    color: #E5E7EB;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.calendar-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.calendar-navigation button {
+    background-color: #252B35;
+    color: #E5E7EB;
+    border: 1px solid #353B45;
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.calendar-navigation button:hover {
+    background-color: #353B45;
+}
+
+/* WEEKDAY LABELS */
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.calendar-weekdays span {
+    color: #9CA3AF;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    padding: 12px 0;
+}
+
+/* CALENDAR GRID */
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 8px;
+}
+
+/* INDIVIDUAL CALENDAR DAYS */
+
+.calendar-day {
+    min-height: 95px;
+    background-color: #252B35;
+    border: 1px solid #353B45;
+    border-radius: 8px;
+    padding: 12px;
+    box-sizing: border-box;
+    color: #E5E7EB;
+}
+
+.calendar-day:hover {
+    border-color: #8BA5B8;
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/* RESPONSIVE CALENDAR */
+
+@media (max-width: 600px) {
+    .schedule-calendar {
+        padding: 12px;
+    }
+
+    .calendar-grid,
+    .calendar-weekdays {
+        gap: 4px;
+    }
+
+    .calendar-day {
+        min-height: 55px;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .calendar-header h3 {
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   CALENDAR JOB LABELS
+========================= */
+
+.calendar-job {
+    background-color: #354352;
+    color: #E5E7EB;
+
+    border-left: 3px solid #8BA5B8;
+    border-radius: 4px;
+
+    padding: 7px 9px;
+    margin-top: 8px;
+
+    font-size: 12px;
+    line-height: 1.4;
+
+    overflow-wrap: anywhere;
+}
+
+.calendar-job:hover {
+    background-color: #405267;
+}
+
+/* Keep calendar jobs readable on smaller screens */
+
+@media (max-width: 600px) {
+    .calendar-job {
+        padding: 5px;
+        font-size: 10px;
+        margin-top: 5px;
+    }
+}
+
+/* CLICKABLE CALENDAR JOBS */
+
+.calendar-job {
+    display: block;
+    width: 100%;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    text-align: left;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.calendar-job:focus-visible {
+    outline: 2px solid #8BA5B8;
+    outline-offset: 2px;
+}
+
+/* =========================
+   CALENDAR JOB DETAILS MODAL
+========================= */
+
+.calendar-job-modal[hidden] {
+    display: none;
+}
+
+.calendar-job-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.calendar-job-modal-content {
+    width: 100%;
+    max-width: 440px;
+
+    background-color: #1C2028;
+    border: 1px solid #353B45;
+    border-radius: 12px;
+
+    padding: 24px;
+    box-sizing: border-box;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+
+/* MODAL HEADER */
+
+.calendar-job-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #353B45;
+}
+
+.calendar-job-modal-header h3 {
+    margin: 0;
+    color: #E5E7EB;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#closeCalendarJob {
+    background: transparent;
+    border: none;
+    color: #9CA3AF;
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+#closeCalendarJob:hover {
+    color: #E5E7EB;
+}
+
+/* JOB INFORMATION */
+
+.calendar-job-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calendar-detail span {
+    display: block;
+    margin-bottom: 6px;
+
+    color: #9CA3AF;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.calendar-detail p {
+    margin: 0;
+    color: #E5E7EB;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* SMALL SCREENS */
+
+@media (max-width: 600px) {
+    .calendar-job-modal-content {
+        padding: 20px;
+    }
+}
+
+/* =========================
+   SCHEDULE PAGE LAYOUT
+========================= */
+
+body:has(.schedule-calendar) .page-content {
+    width: 100%;
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    body:has(.schedule-calendar) .page-content {
+        padding: 16px;
+    }
+}
+
+/* =========================
+   SCHEDULE PAGE LAYOUT
+========================= */
+
+body:has(.schedule-calendar) .page-content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    body:has(.schedule-calendar) .page-content {
+        padding: 16px;
+    }
+}
+
+/* =========================
+   TODAY'S CALENDAR DATE
+========================= */
+
+.calendar-day.today {
+    border: 2px solid #8BA5B8;
+    background-color: #2D3946;
+}
+
+.calendar-day.today > span:first-child {
+    color: #8BA5B8;
+    font-weight: 700;
+}
+
+

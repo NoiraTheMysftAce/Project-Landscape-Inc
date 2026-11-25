@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Schedule | Landscape Inc.</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="brand">
+            <div class="brand-logo">LI</div>
+
+            <div class="brand-text">
+                <h1>Landscape Inc.</h1>
+                <span>Field Operations</span>
+            </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav-link">Dashboard</a>
+
+    <a href="schedule.html"
+       class="nav-link active"
+       aria-current="page">Schedule</a>
+
+    <a href="locations.html" class="nav-link">Locations</a>
+
+    <a href="jobs.html" class="nav-link">Jobs</a>
+</nav>
+
+        <div class="header-actions">
+            <span class="admin-label">Administrator</span>
+        </div>
+
+    </header>
+
+    <!-- SCHEDULE CONTENT -->
+    <main class="page-content">
+
+        <div class="page-heading">
+            <p class="breadcrumb">Overview / Schedule</p>
+
+            <h1>Schedule</h1>
+
+            <h2>Job Calendar</h2>
+
+            <p>View upcoming landscaping jobs and scheduled visits.</p>
+        </div>
+
+        <!-- SCHEDULE CALENDAR -->
+        <section class="schedule-calendar">
+
+            <div class="calendar-header">
+                <h3 id="calendarMonth">November 2026</h3>
+
+                <div class="calendar-navigation">
+                    <button type="button" id="prevMonth" aria-label="Previous month">
+                        &lt;
+                    </button>
+
+                    <button type="button" id="nextMonth" aria-label="Next month">
+                        &gt;
+                    </button>
+                </div>
+            </div>
+
+            <div class="calendar-weekdays">
+                <span>Sun</span>
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+            </div>
+
+            <div class="calendar-grid" id="calendarGrid">
+                <!-- JavaScript will generate the dates here -->
+            </div>
+
+        </section>
+<!-- CALENDAR JOB DETAILS MODAL -->
+<div id="calendarJobModal" class="calendar-job-modal" hidden>
+
+    <div class="calendar-job-modal-content"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="calendarJobModalTitle">
+
+        <div class="calendar-job-modal-header">
+            <h3 id="calendarJobModalTitle">Job Details</h3>
+
+            <button
+                type="button"
+                id="closeCalendarJob"
+                aria-label="Close job details">
+                &times;
+            </button>
+        </div>
+
+        <div class="calendar-job-details">
+            <div class="calendar-detail">
+                <span>Location</span>
+                <p id="calendarJobLocation">—</p>
+            </div>
+
+            <div class="calendar-detail">
+                <span>Job Type</span>
+                <p id="calendarJobType">—</p>
+            </div>
+
+            <div class="calendar-detail">
+                <span>Scheduled Date</span>
+                <p id="calendarJobDate">—</p>
+            </div>
+
+            <div class="calendar-detail">
+                <span>Status</span>
+                <p id="calendarJobStatus">—</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    </main>
+
+    <script src="js/schedule.js"></script>
+</body>
+
+</html>

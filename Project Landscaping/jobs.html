@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs | Landscape Inc.</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+
+        <div class="brand">
+            <div class="brand-logo">LI</div>
+
+            <div class="brand-text">
+                <h1>Landscape Inc.</h1>
+                <span>Field Operations</span>
+            </div>
+        </div>
+
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-link">Dashboard</a>
+            <a href="schedule.html" class="nav-link">Schedule</a>
+            <a href="#" class="nav-link">Locations</a>
+            <a href="jobs.html" class="nav-link active" aria-current="page">Jobs</a>
+        </nav>
+
+        <div class="header-actions">
+            <span class="admin-label">Administrator</span>
+        </div>
+
+    </header>
+
+    <!-- Jobs Page -->
+    <main class="dashboard">
+
+        <section class="dashboard-header">
+
+            <div class="dashboard-heading">
+                <p class="breadcrumb">Overview / Jobs</p>
+
+                <h2>Jobs</h2>
+
+                <p class="welcome-message">
+                    Job Management
+                </p>
+
+                <p class="dashboard-description">
+                    Manage landscaping jobs, assignments,
+                    photos, and completion approvals.
+                </p>
+            </div>
+
+        </section>
+        <!-- JOB MANAGEMENT -->
+
+        <section class="jobs-management">
+
+            <div class="jobs-toolbar">
+                <div>
+                    <h3>All Jobs</h3>
+                    <p>View and manage landscaping work.</p>
+                </div>
+
+                <button type="button" class="new-job-button">
+                    + New Job
+                </button>
+            </div>
+            <!-- JOB SEARCH & FILTER -->
+<div class="jobs-toolbar">
+    <input
+        type="search"
+        id="jobSearch"
+        class="job-search"
+        placeholder="Search by location or job type..."
+        aria-label="Search jobs"
+    >
+
+    <select
+        id="jobStatusFilter"
+        class="job-status-filter"
+        aria-label="Filter jobs by status"
+    >
+        <option value="all">All Statuses</option>
+        <option value="Scheduled">Scheduled</option>
+        <option value="In Progress">In Progress</option>
+        <option value="Awaiting Review">Awaiting Review</option>
+        <option value="Approved">Approved</option>
+    </select>
+</div>
+
+            <div class="jobs-table-wrapper">
+                <table class="jobs-table">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Location</th>
+                            <th scope="col">Job Type</th>
+                            <th scope="col">Scheduled Date</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="jobsTableBody">
+                        <tr>
+                            <td>Panda Express - Eubank / Lomas</td>
+                            <td>Routine Landscaping</td>
+                            <td>—</td>
+                            <td><span class="job-status in-progress">In Progress</span></td>
+                            <td><button type="button" class="manage-job-button">Manage</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Panda Express - Eubank / Montgomery</td>
+                            <td>Routine Landscaping</td>
+                            <td>—</td>
+                            <td><span class="job-status scheduled">Scheduled</span></td>
+                            <td><button type="button" class="manage-job-button">Manage</button></td>
+                        </tr>
+
+                        <tr>
+                            <td>Panda Express - Rio Bravo / Coors</td>
+                            <td>Tree Trimming</td>
+                            <td>—</td>
+                            <td><span class="job-status awaiting-review">Awaiting Review</span></td>
+                            <td><button type="button" class="manage-job-button">Manage</button></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+
+        </section>
+        <!-- JOB MANAGEMENT MODAL -->
+        <div class="modal-overlay" id="manageJobModal" hidden>
+
+            <div class="job-modal" role="dialog" aria-modal="true" aria-labelledby="manageJobTitle">
+
+                <div class="modal-header">
+                    <h3 id="manageJobTitle">Manage Job</h3>
+
+                    <button type="button" class="modal-close" id="closeManageJob" aria-label="Close job management">
+                        &times;
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <h4 id="manageJobLocation"></h4>
+
+                    <p id="manageJobType"></p>
+
+                    <p id="manageJobStatus"></p>
+                    <div class="job-detail-section">
+
+                        <h4>Update Job Status</h4>
+
+                        <label for="jobStatusSelect">
+                            Current Status
+                        </label>
+
+                        <select id="jobStatusSelect">
+                            <option value="Scheduled">Scheduled</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Awaiting Review">Awaiting Review</option>
+                            <option value="Approved" disabled>Approved</option>
+                        </select>
+
+                        <button type="button" class="save-status-button" id="saveJobStatus">
+                            Save Status
+                        </button>
+
+                        <p id="statusSaveMessage" class="status-save-message" role="status" aria-live="polite">
+                        </p>
+
+                    </div>
+
+                    <div class="job-detail-section">
+                        <h4>Job Instructions</h4>
+
+                        <label for="jobInstructions">
+                            Instructions for this job
+                        </label>
+
+                        <textarea id="jobInstructions" rows="5"
+                            placeholder="Enter landscaping instructions..."></textarea>
+
+                        <button type="button" class="save-instructions-button" id="saveJobInstructions">
+                            Save Instructions
+                        </button>
+
+                        <p id="instructionsSaveMessage" class="instructions-save-message" role="status"
+                            aria-live="polite"></p>
+                    </div>
+
+                    <div class="job-detail-section">
+                        <h4>Assigned To</h4>
+
+                        <label for="jobAssignee">
+                            Person or Crew
+                        </label>
+
+                        <input type="text" id="jobAssignee" placeholder="Enter name or crew..." autocomplete="off">
+
+                        <button type="button" class="save-assignment-button" id="saveJobAssignment">
+                            Save Assignment
+                        </button>
+
+                        <p id="assignmentSaveMessage" class="assignment-save-message" role="status" aria-live="polite">
+                        </p>
+                        <!-- JOB PHOTOS -->
+                        <div class="job-detail-section">
+
+                            <h4>Job Photos</h4>
+
+                            <div class="job-photo-group">
+                                <label for="beforeJobPhoto">Before Photo</label>
+
+                                <input type="file" id="beforeJobPhoto" accept="image/*">
+
+                                <div class="job-photo-preview" id="beforePhotoPreview">
+                                    No before photo selected
+                                </div>
+                            </div>
+
+                            <div class="job-photo-group">
+                                <label for="afterJobPhoto">After Photo</label>
+
+                                <input type="file" id="afterJobPhoto" accept="image/*">
+
+                                <div class="job-photo-preview" id="afterPhotoPreview">
+                                    No after photo selected
+                                </div>
+                            </div>
+
+                            <p class="photo-help-text">
+                                Photos are previewed locally for now.
+                                Permanent uploads will be added later.
+                            </p>
+
+                        </div>
+                        <!-- JOB ISSUES -->
+                        <div class="job-detail-section">
+
+                            <h4>Issues Encountered</h4>
+
+                            <label for="jobIssue">
+                                Issue Description
+                            </label>
+
+                            <textarea id="jobIssue" rows="4"
+                                placeholder="Describe any problems encountered..."></textarea>
+
+                            <label for="jobIssueStatus">
+                                Issue Status
+                            </label>
+
+                            <select id="jobIssueStatus">
+                                <option value="none">No Issues</option>
+                                <option value="open">Open</option>
+                                <option value="resolved">Resolved</option>
+                            </select>
+
+                            <button type="button" class="save-issue-button" id="saveJobIssue">
+                                Save Issue
+                            </button>
+
+                            <p id="issueSaveMessage" class="issue-save-message" role="status" aria-live="polite">
+                            </p>
+
+                        </div>
+
+                        <!-- JOB COMPLETION APPROVAL -->
+                        <div class="job-detail-section">
+
+                            <h4>Completion Approval</h4>
+
+                            <p class="approval-description" id="approvalDescription">
+                                Review the completed work before approving this job.
+                            </p>
+
+                            <button type="button" class="approve-job-button" id="approveJobButton">
+                                Approve Completed Job
+                            </button>
+
+                            <p id="approvalMessage" class="approval-message" role="status" aria-live="polite">
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- NEW JOB MODAL -->
+        <div class="modal-overlay" id="newJobModal" hidden>
+
+            <div class="job-modal" role="dialog" aria-modal="true" aria-labelledby="newJobTitle">
+
+                <div class="modal-header">
+                    <h3 id="newJobTitle">Create New Job</h3>
+
+                    <button type="button" class="modal-close" id="closeNewJob" aria-label="Close new job form">
+                        &times;
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form id="newJobForm">
+
+                        <div class="job-form-group">
+                            <label for="newJobLocation">Location</label>
+
+                            <select id="newJobLocation" required>
+                                <option value="">Select a location</option>
+                                <option value="Eubank / Lomas">Eubank / Lomas</option>
+                                <option value="Eubank / Montgomery">Eubank / Montgomery</option>
+                                <option value="Montaño / I-25">Montaño / I-25</option>
+                                <option value="Paseo del Norte / San Mateo">Paseo del Norte / San Mateo</option>
+                                <option value="Bernalillo">Bernalillo</option>
+                                <option value="98th / Coors">98th / Coors</option>
+                                <option value="Rio Bravo / Coors">Rio Bravo / Coors</option>
+                                <option value="Alameda / Coors">Alameda / Coors</option>
+                                <option value="Orilla / Coors">Orilla / Coors</option>
+                                <option value="Gibson">Gibson</option>
+                                <option value="Los Lunas">Los Lunas</option>
+                                <option value="Rio Rancho">Rio Rancho</option>
+                            </select>
+                        </div>
+
+                        <div class="job-form-group">
+                            <label for="newJobType">Job Type</label>
+
+                            <input type="text" id="newJobType" placeholder="e.g. Routine Landscaping" required>
+                        </div>
+
+                        <div class="job-form-group">
+                            <label for="newJobDate">Scheduled Date</label>
+
+                            <input type="date" id="newJobDate" required>
+                        </div>
+
+                        <div class="job-form-group">
+                            <label for="newJobInstructions">Job Instructions</label>
+
+                            <textarea id="newJobInstructions" rows="4"
+                                placeholder="Enter instructions for this job..."></textarea>
+                        </div>
+
+                        <button type="submit" class="new-job-submit">
+                            Create Job
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- EDIT JOB MODAL -->
+        <div id="editJobModal" class="job-modal" hidden>
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h2>Edit Job</h2>
+
+                    <button type="button" id="closeEditJob" class="close-modal"
+                        aria-label="Close Edit Job">&times;</button>
+                </div>
+
+                <div class="modal-body">
+                    <form id="editJobForm">
+
+                        <div class="form-group">
+                            <label for="editJobLocation">
+                                Location
+                            </label>
+
+                            <select id="editJobLocation" required>
+                                <option value="">Select location</option>
+                                <option value="Eubank / Lomas">Eubank / Lomas</option>
+                                <option value="Eubank / Montgomery">Eubank / Montgomery</option>
+                                <option value="Montaño / I-25">Montaño / I-25</option>
+                                <option value="Paseo del Norte / San Mateo">Paseo del Norte / San Mateo</option>
+                                <option value="Bernalillo">Bernalillo</option>
+                                <option value="98th / Coors">98th / Coors</option>
+                                <option value="Rio Bravo / Coors">Rio Bravo / Coors</option>
+                                <option value="Alameda / Coors">Alameda / Coors</option>
+                                <option value="Orilla / Coors">Orilla / Coors</option>
+                                <option value="Gibson">Gibson</option>
+                                <option value="Los Lunas">Los Lunas</option>
+                                <option value="Rio Rancho">Rio Rancho</option>
+                            </select>
+                        </div>
+
+                        <div class="edit-job-fields">
+
+                            <div class="form-group">
+                                <label for="editJobType">Job Type</label>
+                                <input type="text" id="editJobType" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="editJobDate">Scheduled Date</label>
+                                <input type="date" id="editJobDate" required>
+                            </div>
+
+                        </div>
+
+                        <div class="edit-job-actions">
+                            <button type="button" id="cancelEditJob">
+                                Cancel
+                            </button>
+
+                            <button type="submit" class="primary-button">
+                                Save Changes
+                            </button>
+                        </div>
+
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <script src="js/jobs.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project Landscape Inc. | Dashboard</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Dashboard content will go here -->
+    <!-- Header -->
+    <header class="site-header">
+
+        <!-- Business Logo / Name -->
+        <div class="brand">
+            <div class="brand-logo">LI</div>
+
+            <div class="brand-text">
+                <h1>Landscape Inc.</h1>
+                <span>Field Operations</span>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="main-nav" aria-label="Main navigation">
+            <a href="#" class="nav-link active" aria-current="page">
+                Dashboard
+            </a>
+
+            <a href="schedule.html" class="nav-link">
+                Schedule
+            </a>
+
+            <a href="#" class="nav-link">
+                Locations
+            </a>
+
+            <a href="jobs.html" class="nav-link">Jobs</a>
+        </nav>
+
+        <!-- Administrator Profile -->
+        <div class="header-actions">
+            <span class="admin-label">Administrator</span>
+        </div>
+
+    </header>
+    <!-- Main Dashboard -->
+    <main class="dashboard">
+
+        <!-- Dashboard Heading -->
+        <section class="dashboard-header">
+
+            <!-- Dashboard Time Filter -->
+            <div class="dashboard-filters" role="group" aria-label="Dashboard time period">
+
+                <button type="button" class="filter-button active" data-period="week" aria-pressed="true">
+                    This Week
+                </button>
+
+                <button type="button" class="filter-button" data-period="month" aria-pressed="false">
+                    This Month
+                </button>
+
+            </div>
+
+            <div class="dashboard-heading">
+                <p class="breadcrumb">Overview / Dashboard</p>
+
+                <h2>Dashboard</h2>
+
+                <p class="welcome-message">
+                    Welcome back, Miguel.
+                </p>
+
+                <p class="dashboard-description">
+                    Here's an overview of your landscaping operations.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Dashboard Summary Cards -->
+        <section class="dashboard-stats" aria-label="Dashboard statistics">
+
+            <!-- Jobs Coming Up -->
+            <article class="stat-card">
+                <p class="stat-label">Jobs Coming Up</p>
+                <h3 class="stat-number" id="jobsComingUp">4</h3>
+                <p class="stat-description">Next 7 days</p>
+            </article>
+
+            <!-- Jobs for Today -->
+            <article class="stat-card">
+                <p class="stat-label">Jobs for Today</p>
+                <h3 class="stat-number" id="jobsToday">2</h3>
+                <p class="stat-description">Scheduled today</p>
+            </article>
+
+            <!-- Jobs Finished -->
+            <article class="stat-card">
+                <p class="stat-label">Jobs Finished</p>
+                <h3 class="stat-number" id="jobsFinished">8</h3>
+                <p class="stat-description">Completed this period</p>
+            </article>
+
+            <!-- Needs Approval -->
+            <article class="stat-card">
+                <p class="stat-label">Needs Your Approval</p>
+                <h3 class="stat-number" id="needsApproval">1</h3>
+                <p class="stat-description">Awaiting review</p>
+            </article>
+
+            <!-- Delayed Jobs -->
+            <article class="stat-card">
+                <p class="stat-label">Delayed / Problems</p>
+                <h3 class="stat-number" id="delayedJobs">1</h3>
+                <p class="stat-description">Needs attention</p>
+            </article>
+
+            <!-- New Requests -->
+            <!-- New Requests -->
+            <article class="stat-card">
+                <p class="stat-label">New Requests</p>
+                <h3 class="stat-number" id="newRequestsCount">1</h3>
+                <p class="stat-description">Pending review</p>
+            </article>
+
+            <!-- Maintenance Due -->
+            <article class="stat-card">
+                <p class="stat-label">Maintenance Due</p>
+                <h3 class="stat-number" id="maintenanceDue">3</h3>
+                <p class="stat-description">Locations due this period</p>
+            </article>
+
+            <!-- Recent Updates -->
+            <article class="stat-card">
+                <p class="stat-label">Recent Updates & Notifications</p>
+                <h3 class="stat-number" id="recentUpdates">3</h3>
+                <p class="stat-description">New updates</p>
+            </article>
+
+        </section>
+        <!-- Dashboard Panels -->
+        <div class="dashboard-panels dashboard-panels-updated">
+                <!-- Upcoming Jobs -->
+                <section class="upcoming-jobs">
+
+                    <div class="section-header">
+                        <div>
+                            <h3>Upcoming Jobs</h3>
+                            <p>Scheduled landscaping work</p>
+                        </div>
+
+                        <a href="jobs.html" class="view-all">View All Jobs</a>
+                    </div>
+
+                    <div class="jobs-list">
+
+                        <!-- Job 1 -->
+                        <article class="job-item">
+                            <div class="job-info">
+                                <h4>Panda Express - Eubank / Lomas</h4>
+                                <p>Routine Landscaping</p>
+                            </div>
+
+                            <span class="job-status in-progress">
+                                In Progress
+                            </span>
+
+                            <a href="#" class="job-link">View Details</a>
+                        </article>
+
+                        <!-- Job 2 -->
+                        <article class="job-item">
+                            <div class="job-info">
+                                <h4>Panda Express - Eubank / Montgomery</h4>
+                                <p>Routine Landscaping</p>
+                            </div>
+
+                            <span class="job-status scheduled">
+                                Scheduled
+                            </span>
+
+                            <a href="#" class="job-link">View Details</a>
+                        </article>
+
+                        <!-- Job 3 -->
+                        <article class="job-item">
+                            <div class="job-info">
+                                <h4>Panda Express - Rio Bravo / Coors</h4>
+                                <p>Tree Trimming</p>
+                            </div>
+
+                            <span class="job-status awaiting-review">
+                                Awaiting Review
+                            </span>
+
+                            <a href="#" class="job-link">View Details</a>
+                        </article>
+
+                    </div>
+
+                </section>
+
+                
+
+            <!-- Needs Attention: view-only dashboard summary -->
+            <section class="needs-attention">
+                <div class="section-header">
+                    <div>
+                        <h3>Needs Attention</h3>
+                        <p>Items requiring your review</p>
+                    </div>
+                </div>
+                <div class="attention-item">
+                    <span class="attention-label">Awaiting Approval</span>
+                    <h4>Panda Express - Rio Bravo / Coors</h4>
+                    <p>Completed work awaiting review</p>
+                </div>
+                <div class="attention-item">
+                    <span class="attention-label">Reported Problem</span>
+                    <h4>Landscaping Issue</h4>
+                    <p>Details pending</p>
+                </div>
+            </section>
+            <!-- Service Requests -->
+            <section class="service-requests">
+
+                <!-- Section Heading -->
+                <div class="section-header">
+                    <div>
+                        <h3>Service Requests</h3>
+                        <p>Additional work requested</p>
+                    </div>
+
+                    <span class="request-count" id="requestCount">
+                        1 Pending
+                    </span>
+                </div>
+
+                <!-- Request Details -->
+                <article class="request-item">
+
+                    <h4>Additional Tree Trimming Requested</h4>
+
+                    <p class="request-location">
+                        Panda Express - Rio Bravo / Coors
+                    </p>
+
+                    <p class="request-submitted">
+                        Submitted by: Miguel's Dad
+                    </p>
+
+                    <button type="button" class="review-button" id="reviewButton">
+                        Mark as Reviewed
+                    </button>
+
+                </article>
+
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+
+                <!-- Section Heading -->
+                <div class="section-header">
+                    <div>
+                        <h3>Recent Activity</h3>
+                        <p>Latest updates across your locations</p>
+                    </div>
+                </div>
+
+                <!-- Activity List -->
+                <div class="activity-list">
+
+                    <!-- Activity 1 -->
+                    <article class="activity-item">
+                        <div class="activity-dot"></div>
+
+                        <div class="activity-info">
+                            <h4>Job Completed</h4>
+                            <p>Panda Express - Alameda / Coors</p>
+                            <span>Job marked as completed</span>
+                        </div>
+                    </article>
+
+                    <!-- Activity 2 -->
+                    <article class="activity-item">
+                        <div class="activity-dot"></div>
+
+                        <div class="activity-info">
+                            <h4>Job Assigned</h4>
+                            <p>Panda Express - Eubank / Montgomery</p>
+                            <span>New landscaping job scheduled</span>
+                        </div>
+                    </article>
+
+                    <!-- Activity 3 -->
+                    <article class="activity-item">
+                        <div class="activity-dot"></div>
+
+                        <div class="activity-info">
+                            <h4>Service Request Submitted</h4>
+                            <p>Panda Express - Rio Bravo / Coors</p>
+                            <span>Additional tree trimming requested</span>
+                        </div>
+                    </article>
+
+                </div>
+
+            </section>
+
+        </div>
+        <!-- End Dashboard Panels -->
+
+                <!-- Job Details Modal -->
+                <div class="modal-overlay" id="jobModal" hidden>
+
+                    <div class="job-modal" role="dialog" aria-modal="true" aria-labelledby="jobModalTitle">
+
+                        <div class="modal-header">
+                            <h3 id="jobModalTitle">Job Details</h3>
+
+                            <button type="button" class="modal-close" id="closeJobModal" aria-label="Close job details">
+                                &times;
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <!-- Job Overview -->
+                            <h4 id="modalJobLocation"></h4>
+                            <p id="modalJobType"></p>
+                            <p id="modalJobStatus"></p>
+
+                            <!-- Job Instructions -->
+                            <div class="job-detail-section">
+                                <h4>Job Instructions</h4>
+
+                                <p id="modalJobInstructions">
+                                    Instructions will appear here.
+                                </p>
+                            </div>
+
+                            <!-- Job Assignment -->
+                            <div class="job-detail-section">
+                                <h4>Assigned To</h4>
+
+                                <p id="modalJobAssignment">
+                                    Assignment information will appear here.
+                                </p>
+                            </div>
+
+                            <div class="job-detail-section">
+                                <h4>Job Photos</h4>
+
+                                <div class="job-photos">
+                                <div class="photo-box">
+                                    <h5>Before</h5>
+
+                                    <img id="beforePhotoPreview" class="photo-preview" alt="Before job photo" hidden>
+
+                                    <p id="beforePhotoPlaceholder">No photo available</p>
+                                </div>
+
+                                <div class="photo-box">
+                                    <h5>After</h5>
+
+                                    <img id="afterPhotoPreview" class="photo-preview" alt="After job photo" hidden>
+
+                                    <p id="afterPhotoPlaceholder">No photo available</p>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
